@@ -9,16 +9,27 @@ public class Player : MonoBehaviour
 
     float movement = 0f;
     Rigidbody2D rb;
+    SpriteRenderer sprite;
 
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
+        sprite = GetComponent<SpriteRenderer>();
     }
-
   
     void Update()
     {
        movement = Input.GetAxis("Horizontal") * movementSpeed;
+
+       // Left
+        if (Input.GetAxis("Horizontal") < 0) {
+            sprite.flipX = true;
+        }
+
+       // Right
+        if (Input.GetAxis("Horizontal") > 0) {
+            sprite.flipX = false;
+        }
     }
 
     void FixedUpdate() 
@@ -27,4 +38,5 @@ public class Player : MonoBehaviour
         velocity.x = movement;
         rb.velocity = velocity;
     }
+    
 }
