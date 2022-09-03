@@ -29,7 +29,6 @@ public class LevelGenerator : MonoBehaviour
             spawnPosition.x = Random.Range(-levelWidth, levelWidth);
 
             Instantiate(platformPrefab, spawnPosition, Quaternion.identity);
-            Debug.Log("Platforms: " + platformCount);
             platformCount++;
 
             if (spawnPosition.y > lastPlatformHeight) {
