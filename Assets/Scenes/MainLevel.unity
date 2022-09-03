@@ -134,6 +134,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Platform
       objectReference: {fileID: 0}
+    - target: {fileID: 2960047998354282486, guid: 6a89edc5da2aa7b4e842861281e7db8f, type: 3}
+      propertyPath: m_TagString
+      value: platform
+      objectReference: {fileID: 0}
     - target: {fileID: 2960047998354282489, guid: 6a89edc5da2aa7b4e842861281e7db8f, type: 3}
       propertyPath: m_RootOrder
       value: 1
@@ -663,11 +667,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   platformPrefab: {fileID: 2960047998354282486, guid: 6a89edc5da2aa7b4e842861281e7db8f, type: 3}
-  player: {fileID: 0}
-  numberOfPlatforms: 200
+  player: {fileID: 387556379}
+  maxPlatforms: 15
   levelWidth: 3
-  minY: 0.2
-  maxY: 1.5
 --- !u!4 &1462358416
 Transform:
   m_ObjectHideFlags: 0
@@ -766,6 +768,10 @@ PrefabInstance:
     - target: {fileID: 2960047998354282486, guid: 6a89edc5da2aa7b4e842861281e7db8f, type: 3}
       propertyPath: m_Name
       value: Platform (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 2960047998354282486, guid: 6a89edc5da2aa7b4e842861281e7db8f, type: 3}
+      propertyPath: m_TagString
+      value: platform
       objectReference: {fileID: 0}
     - target: {fileID: 2960047998354282489, guid: 6a89edc5da2aa7b4e842861281e7db8f, type: 3}
       propertyPath: m_RootOrder
