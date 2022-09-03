@@ -7,7 +7,8 @@ using UnityEngine.SceneManagement;
 public class Player : MonoBehaviour
 {
     public float movementSpeed = 10f;
-    float movement;
+    public AudioSource deathSound;
+    private float movement;
 
     Rigidbody2D rb;
     SpriteRenderer sprite;
@@ -17,35 +18,44 @@ public class Player : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         sprite = GetComponent<SpriteRenderer>();
     }
-  
+
     void Update()
     {
-       movement = Input.GetAxis("Horizontal") * movementSpeed;
+        movement = Input.GetAxis("Horizontal") * movementSpeed;
 
-       // Left movement
-        if (Input.GetAxis("Horizontal") < 0) {
+        // Left movement
+        if (Input.GetAxis("Horizontal") < 0)
+        {
             sprite.flipX = true;
         }
 
-       // Right movement
-        if (Input.GetAxis("Horizontal") > 0) {
+        // Right movement
+        if (Input.GetAxis("Horizontal") > 0)
+        {
             sprite.flipX = false;
         }
     }
 
-    void FixedUpdate() 
+    void FixedUpdate()
     {
         Vector2 velocity = rb.velocity;
         velocity.x = movement;
         rb.velocity = velocity;
     }
-    
-    void OnTriggerEnter2D(Collider2D other) 
+
+    void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.tag == "Death Collider") 
+        if (other.tag == "Death Collider")
         {
             Debug.Log("Collided!");
-            SceneManager.LoadScene("EndMenu");
+            deathSound.Play();
+            StartCoroutine(ChangeToScene(2f));
         }
+    }
+
+    IEnumerator ChangeToScene(float delay)
+    {
+        yield return new WaitForSeconds(delay);
+        SceneManager.LoadScene("EndMenu");
     }
 }

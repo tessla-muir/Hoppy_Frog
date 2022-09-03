@@ -4,7 +4,8 @@ using UnityEngine;
 
 public class Platform : MonoBehaviour
 {
-    [SerializeField] float jumpForce = 10f;
+    public float jumpForce = 10f;
+    public AudioSource jumpSound;
 
     void OnCollisionEnter2D(Collision2D other)
     {
@@ -17,6 +18,7 @@ public class Platform : MonoBehaviour
                 Vector2 velocity = rb.velocity;
                 velocity.y = jumpForce;
                 rb.velocity = velocity;
+                jumpSound.Play();
             }
         }
     }
