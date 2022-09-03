@@ -757,6 +757,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   platformPrefab: {fileID: 2960047998354282486, guid: 6a89edc5da2aa7b4e842861281e7db8f, type: 3}
+  highPlatformPrefab: {fileID: 2960047998354282486, guid: bdc1b79be861fc043ba7a5086c23968c, type: 3}
   player: {fileID: 387556379}
   maxPlatforms: 15
   levelWidth: 3

@@ -5,6 +5,7 @@ using UnityEngine;
 public class LevelGenerator : MonoBehaviour
 {
     public GameObject platformPrefab;
+    public GameObject highPlatformPrefab;
     public Transform player;
 
 
@@ -12,6 +13,7 @@ public class LevelGenerator : MonoBehaviour
     public int maxPlatforms = 18;
     private float maxHeight = 0;
     private float lastPlatformHeight = 0;
+    private string lastPlatformType = "normal";
 
     public float levelWidth = 5f;
     private float minY = .2f;
@@ -65,11 +67,28 @@ public class LevelGenerator : MonoBehaviour
         // Adds new platform
         if (platformCount < maxPlatforms)
         {
-            spawnPosition.y += Random.Range(lastPlatformHeight + .8f, lastPlatformHeight + 1.4f);
-            spawnPosition.x = Random.Range(-levelWidth, levelWidth);
+            // Look at last platform type
+            if (lastPlatformType == "normal") {
+                spawnPosition.y += Random.Range(lastPlatformHeight + .8f, lastPlatformHeight + 1.4f);
+                spawnPosition.x = Random.Range(-levelWidth, levelWidth);
+            } else {
+                spawnPosition.y += Random.Range(lastPlatformHeight + 1.4f, lastPlatformHeight + 2.2f);
+                spawnPosition.x = Random.Range(-levelWidth, levelWidth);
+            }
+
             lastPlatformHeight = spawnPosition.y;
 
-            Instantiate(platformPrefab, spawnPosition, Quaternion.identity);
+            // Math to determine new platform
+            float determiner = Random.Range(1, 100);
+
+            if (determiner < 8) {
+                Instantiate(highPlatformPrefab, spawnPosition, Quaternion.identity);
+                lastPlatformType = "high";
+            } else {
+                Instantiate(platformPrefab, spawnPosition, Quaternion.identity);
+                lastPlatformType = "normal";
+            }
+
             platformCount++;
         }
     }
