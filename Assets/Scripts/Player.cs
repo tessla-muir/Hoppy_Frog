@@ -5,9 +5,11 @@ using UnityEngine;
 [RequireComponent(typeof(Rigidbody2D))]
 public class Player : MonoBehaviour
 {
-    public float movementSpeed = 10f;
+    public GameObject SceneManager;
 
-    float movement = 0f;
+    public float movementSpeed = 10f;
+    float movement;
+
     Rigidbody2D rb;
     SpriteRenderer sprite;
 
@@ -21,12 +23,12 @@ public class Player : MonoBehaviour
     {
        movement = Input.GetAxis("Horizontal") * movementSpeed;
 
-       // Left
+       // Left movement
         if (Input.GetAxis("Horizontal") < 0) {
             sprite.flipX = true;
         }
 
-       // Right
+       // Right movement
         if (Input.GetAxis("Horizontal") > 0) {
             sprite.flipX = false;
         }
@@ -39,4 +41,11 @@ public class Player : MonoBehaviour
         rb.velocity = velocity;
     }
     
+    void OnTriggerEnter2D(Collider2D other) 
+    {
+        if (other.tag == "Death Collider") 
+        {
+            Debug.Log("Collided!");
+        }
+    }
 }
