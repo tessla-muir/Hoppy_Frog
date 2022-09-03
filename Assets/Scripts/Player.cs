@@ -1,12 +1,11 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 [RequireComponent(typeof(Rigidbody2D))]
 public class Player : MonoBehaviour
 {
-    public GameObject SceneManager;
-
     public float movementSpeed = 10f;
     float movement;
 
@@ -46,6 +45,7 @@ public class Player : MonoBehaviour
         if (other.tag == "Death Collider") 
         {
             Debug.Log("Collided!");
+            SceneManager.LoadScene("EndMenu");
         }
     }
 }

@@ -283,7 +283,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0a2da276a9587be4ea2da382a87df5c0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  SceneManager: {fileID: 0}
   movementSpeed: 10
 --- !u!50 &387556381
 Rigidbody2D:
