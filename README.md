@@ -4,4 +4,4 @@
 An implemenation of Doodle Jump.
 Implemented to learn 2D Unity: procedural generation, instantiate/destroy obects, scene changing, audio sources, colliders, and UI elements with score-keeping and menus.
 
-This was for educational purposes. I did not create the assets or sounds used.
+This was for educational purposes. I did not create the assets or sounds used. Sounds from https://www.zapsplat.com.
