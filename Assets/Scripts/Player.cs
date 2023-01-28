@@ -38,6 +38,7 @@ public class Player : MonoBehaviour
 
     void FixedUpdate()
     {
+        // Update movement in the x
         Vector2 velocity = rb.velocity;
         velocity.x = movement;
         rb.velocity = velocity;
@@ -45,6 +46,7 @@ public class Player : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D other)
     {
+        // Player fell off the screen
         if (other.tag == "Death Collider")
         {
             Debug.Log("Collided!");
@@ -55,6 +57,7 @@ public class Player : MonoBehaviour
 
     IEnumerator ChangeToScene(float delay)
     {
+        // Waits for death sound to play before changing to next game
         yield return new WaitForSeconds(delay);
         SceneManager.LoadScene("EndMenu");
     }

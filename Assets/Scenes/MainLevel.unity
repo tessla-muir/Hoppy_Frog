@@ -195,7 +195,7 @@ GameObject:
   - component: {fileID: 387556382}
   - component: {fileID: 387556383}
   m_Layer: 0
-  m_Name: Doodler
+  m_Name: Player
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -241,13 +241,13 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 3e395a7f88411df43a4bbb16fc392e7b, type: 3}
+  m_SortingOrder: 5
+  m_Sprite: {fileID: 21300000, guid: eb33cb4d7b51db44aba55aca6eec183a, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 2, y: 1.95}
+  m_Size: {x: 4.84, y: 5.15}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -262,7 +262,7 @@ Transform:
   m_GameObject: {fileID: 387556377}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0.19, y: -1.2181529, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.2, y: 0.2, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -316,18 +316,18 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.15211067, y: -0.34647435}
+  m_Offset: {x: -0.036734104, y: -1.4507886}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1.1428572, y: 1.1142857}
-    newSize: {x: 2, y: 1.95}
+    oldSize: {x: 4.84, y: 5.15}
+    newSize: {x: 4.84, y: 5.15}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.83863574, y: 0.421337}
+  m_Size: {x: 4.6954937, y: 1.0476644}
   m_EdgeRadius: 0
 --- !u!82 &387556383
 AudioSource:
@@ -549,8 +549,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 792739693}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.14, y: -0.75, z: 10}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: 0.14, y: 0.26, z: 10}
+  m_LocalScale: {x: 1.4861, y: 1.4861, z: 1.4861}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 519420032}
@@ -597,7 +597,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: -10
-  m_Sprite: {fileID: 21300000, guid: ccc483afc92d73c4d99e384d7a561c79, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 2025e03eb433f7046a6f4ee55e0828ad, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -642,7 +642,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: da7e2d847978a134ca7a5b851f4db52d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  doodler: {fileID: 387556379}
+  player: {fileID: 387556379}
   style:
     m_Name: bold
     m_Normal:

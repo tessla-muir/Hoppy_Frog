@@ -25,6 +25,7 @@ public class LevelGenerator : MonoBehaviour
     {
         Vector3 spawnPosition = new Vector3();
 
+        // Spawns in starting platforms
         for (int i = platformCount; i < maxPlatforms; i++)
         {
             spawnPosition.y += Random.Range(minY, maxY);
@@ -67,7 +68,8 @@ public class LevelGenerator : MonoBehaviour
         // Adds new platform
         if (platformCount < maxPlatforms)
         {
-            // Look at last platform type
+            // Look at last platform type to determine distance to next platform
+            // Ensures it is possible to get to the next platform
             if (lastPlatformType == "normal") {
                 spawnPosition.y += Random.Range(lastPlatformHeight + .8f, lastPlatformHeight + 1.4f);
                 spawnPosition.x = Random.Range(-levelWidth, levelWidth);
@@ -81,7 +83,7 @@ public class LevelGenerator : MonoBehaviour
             // Math to determine new platform
             float determiner = Random.Range(1, 100);
 
-            if (determiner < 8) {
+            if (determiner < 15) {
                 Instantiate(highPlatformPrefab, spawnPosition, Quaternion.identity);
                 lastPlatformType = "high";
             } else {
