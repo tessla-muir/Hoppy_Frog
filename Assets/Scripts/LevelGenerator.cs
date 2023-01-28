@@ -83,7 +83,7 @@ public class LevelGenerator : MonoBehaviour
             // Math to determine new platform
             float determiner = Random.Range(1, 100);
 
-            if (determiner < 15) {
+            if (determiner < 32) {
                 Instantiate(highPlatformPrefab, spawnPosition, Quaternion.identity);
                 lastPlatformType = "high";
             } else {
